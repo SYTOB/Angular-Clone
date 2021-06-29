@@ -1,7 +1,7 @@
 <h1>Angular-Copy</h1>
 
 <h3>Matéria: Programação para a Web</h3>
-<h3>Instituição: Universidade Técnologica Federeal do Paraná</h3>
+<h3>Instituição: Universidade Técnologica Federal do Paraná</h3>
 
 
 <h4>Aluno: </h4>
