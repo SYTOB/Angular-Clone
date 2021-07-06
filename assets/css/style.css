@@ -1,7 +1,6 @@
 body{
     margin: 0;
-    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,
-        Helvetica,Arial,Lucida Grande,sans-serif;
+    font-family: Roboto;
 }
 
 .container {
@@ -9,7 +8,7 @@ body{
     margin: 0 auto;
 }
 
-.display-smarth{
+.display-pixel{
     display: none !important;
 }
     
@@ -44,7 +43,15 @@ body{
     position: relative;
 }
 
+.icon-night{
+    display: flex;
+    width: 41px;
+    margin: 7px  7px;
 
+
+    float: right;
+    position: relative;
+}
 
 .icon{
     display: flex;
@@ -623,6 +630,13 @@ div.content {
 
 /*-----------------MediaQuery------------------------------*/
 
+@media (max-width: 732px) {
+    .display-desktop-menu{
+        display: none !important;
+    }
+    
+ 
+}
 
 @media screen and (max-width: 600px) {
   .sidebar a {
@@ -631,17 +645,36 @@ div.content {
   }
 }
 
-@media (max-width: 732px){
-    .display-desktop-menu{
-        display: none !important;
+/*----------------------PIXEL 2-------------------*/
+@media (max-width: 657px) and (min-width: 361px)
+{   
+    
+    .icon-night{
+    display: flex;
+    width: 41px;
+    margin: 7px 29px 7px 7px;
+    
+    padding-right: 14px;
+    float: right;
+    position: relative;
+    
     }
     
- 
+    .button.botao-central {
+
+    padding: 12px 25px 12px;
+    font-size: 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 40px;
+    line-height: 6rem;
+    border-radius: 48px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    box-sizing: border-box;
+    background-color: white;
+    color: #1976d2;
+    cursor: pointer;
 }
-
-
-@media (max-width: 657px)
-{
 
     .article-container {
         flex-direction: column;
@@ -755,7 +788,7 @@ div.content {
 
     }
 
-    .display-smarth{
+    .display-pixel{
     display: block !important;
     }
     
@@ -775,7 +808,7 @@ div.content {
     
     input[type=text] {
     float: right;
-    width: 145px;
+    width: 100px;
     padding: 6px;
     border: none;
     margin-top: 15px;
@@ -784,5 +817,747 @@ div.content {
     
     }
 }
+
+
+/*----------------------IPHONE 6/7/8--------------------*/
+@media (max-width: 375px) and (min-width: 361px) {
+
+    body{
+    margin: 0px -30px -13px -13px;
+    font-family: Roboto;
+    }
+    
+    .icon-night{
+    display: flex;
+    width: 41px;
+    margin: 7px 29px 7px 7px;
+
+    float: right;
+    position: relative;
+    }
+    
+    .button.botao-central {
+
+    padding: 12px 25px 12px;
+    font-size: 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 40px;
+    line-height: 6rem;
+    border-radius: 48px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    box-sizing: border-box;
+    background-color: white;
+    color: #1976d2;
+    cursor: pointer;
+}
+
+    .article-container {
+        flex-direction: column;
+        max-width: 920px;
+        margin: 40px auto 20px auto;
+
+        display: flex;
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+    section#intro .single_logo{
+
+        display: flex;
+
+        min-width: 250px;
+        height: 235px;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        margin-bottom: 8px;
+
+    }
+
+    section#intro {
+        flex-direction: column;
+        color: #fff;
+    }
+
+    section#intro .texto-central {
+
+        font-size: 1.7rem;
+
+        line-height: 2.2rem;
+        font-weight: 500;
+        margin: 20px 0;
+    }
+
+    section#intro {
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 480px;
+        margin: 0 auto -32px;
+        padding: 48px 0 0;
+    }
+
+    .background-centro{
+
+        display: flex;
+        flex-direction: row;
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        position: relative;
+        width: 100%;
+        min-height: 480px;
+        height: 80vh;
+        max-height: 472px;
+        box-sizing: border-box;
+        padding: 48px 48px 32px;
+        overflow: hidden;
+        transform: skewY(0deg);
+        transform-origin: 100%;
+
+    }
+
+    .cabecalho {   
+
+        width: 100%;
+        background-color: #1976d2;
+        box-shadow: none;
+        position: fixed;
+        transition: background-color .2s linear;
+        height: 55px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+        margin-top: 0px;
+        color:black;
+    }
+
+    footer{
+        background-color:#1976d2;
+        flex-direction: column;
+    }
+
+    footer div.inside-footer div.grid-fluid {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        flex-direction: column;
+
+        margin: 0 0px 40px 0px;
+    }
+
+    .promo-descricao{
+        color: #282828;
+        font-size: 16px;
+
+
+        display: flex;
+        width: 180px;
+
+        margin: 0px 16px;
+        line-height: 30px;
+
+
+        float: left;
+        position: relative;
+
+    }
+
+    
+    .display-pixel{
+    display: block !important;
+    }
+    
+    .display-desktop{
+        display: none !important;
+    }
+    
+
+    .logo{
+        display: flex;
+        width: 46px;
+        margin: 5px;
+
+        float: left;
+        position: relative;
+    }
+    
+    input[type=text] {
+    float: right;
+    width: 100px;
+    padding: 6px;
+    border: none;
+    margin-top: 15px;
+    margin-right: 16px;
+    font-size: 14px;
+    
+    }
+    
+}
+
+/*----------------------MOTO G4--------------------*/
+@media (max-width: 360px) and (min-width: 321px) {
+
+    body{
+    margin: 0px -25px -13px -13px;
+    font-family: Roboto;
+    }
+    
+    .icon-night{
+    display: flex;
+    width: 41px;
+    margin: 7px 29px 7px 7px;
+    
+    padding-right: 10px;
+    float: right;
+    position: relative;
+    }
+    
+    .button.botao-central {
+
+    padding: 12px 25px 12px;
+    font-size: 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 40px;
+    line-height: 6rem;
+    border-radius: 48px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    box-sizing: border-box;
+    background-color: white;
+    color: #1976d2;
+    cursor: pointer;
+}
+
+    .article-container {
+        flex-direction: column;
+        max-width: 920px;
+        margin: 40px auto 20px auto;
+
+        display: flex;
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+    section#intro .single_logo{
+
+        display: flex;
+
+        min-width: 250px;
+        height: 235px;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        margin-bottom: 8px;
+
+    }
+
+    section#intro {
+        flex-direction: column;
+        color: #fff;
+    }
+
+    section#intro .texto-central {
+
+        font-size: 1.7rem;
+
+        line-height: 2.2rem;
+        font-weight: 500;
+        margin: 20px 0;
+    }
+
+    section#intro {
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 480px;
+        margin: 0 auto -32px;
+        padding: 48px 0 0;
+    }
+
+    .background-centro{
+
+        display: flex;
+        flex-direction: row;
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        position: relative;
+        width: 100%;
+        min-height: 480px;
+        height: 80vh;
+        max-height: 472px;
+        box-sizing: border-box;
+        padding: 48px 48px 32px;
+        overflow: hidden;
+        transform: skewY(0deg);
+        transform-origin: 100%;
+
+    }
+
+    .cabecalho {   
+
+        width: 100%;
+        background-color: #1976d2;
+        box-shadow: none;
+        position: fixed;
+        transition: background-color .2s linear;
+        height: 55px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+        margin-top: 0px;
+        color:black;
+    }
+
+    footer{
+        background-color:#1976d2;
+        flex-direction: column;
+    }
+
+    footer div.inside-footer div.grid-fluid {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        flex-direction: column;
+
+        margin: 0 0px 40px 0px;
+    }
+
+    .promo-descricao{
+        color: #282828;
+        font-size: 16px;
+
+
+        display: flex;
+        width: 180px;
+
+        margin: 0px 16px;
+        line-height: 30px;
+
+
+        float: left;
+        position: relative;
+
+    }
+
+    
+    .display-pixel{
+    display: block !important;
+    }
+    
+    .display-desktop{
+        display: none !important;
+    }
+    
+
+    .logo{
+        display: flex;
+        width: 46px;
+        margin: 5px;
+
+        float: left;
+        position: relative;
+    }
+    
+    input[type=text] {
+    float: right;
+    width: 100px;
+    padding: 6px;
+    border: none;
+    margin-top: 15px;
+    margin-right: 16px;
+    font-size: 14px;
+    
+    }
+    
+}
+
+
+/*----------------------IPHONE 5--------------------*/
+@media (max-width: 320px) and (min-width: 281px){
+    
+    body{
+    margin: 0px -80px -13px -13px;
+    font-family: Roboto;
+    }
+    
+    .icon{
+    display: flex;
+    width: 41px;
+    margin: 7px  7px;
+    padding-right: 28px;
+
+    float: right;
+    position: relative;
+}
+    
+    .icon-night{
+    display: none;
+    width: 41px;
+    margin: 7px 29px 7px 7px;
+
+    float: right;
+    position: relative;
+    
+    }
+    
+    .button.botao-central {
+
+    padding: 12px 25px 12px;
+    font-size: 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 40px;
+    line-height: 6rem;
+    border-radius: 48px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    box-sizing: border-box;
+    background-color: white;
+    color: #1976d2;
+    cursor: pointer;
+}
+
+    .article-container {
+        flex-direction: column;
+        max-width: 920px;
+        margin: 40px auto 20px auto;
+
+        display: flex;
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+    section#intro .single_logo{
+
+        display: flex;
+
+        min-width: 250px;
+        height: 235px;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        margin-bottom: 8px;
+
+    }
+
+    section#intro {
+        flex-direction: column;
+        color: #fff;
+    }
+
+    section#intro .texto-central {
+
+        font-size: 1.7rem;
+
+        line-height: 2.2rem;
+        font-weight: 500;
+        margin: 20px 0;
+    }
+
+    section#intro {
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 480px;
+        margin: 0 auto -32px;
+        padding: 48px 0 0;
+    }
+
+    .background-centro{
+
+        display: flex;
+        flex-direction: row;
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        position: relative;
+        width: 100%;
+        min-height: 480px;
+        height: 80vh;
+        max-height: 472px;
+        box-sizing: border-box;
+        padding: 48px 48px 32px;
+        overflow: hidden;
+        transform: skewY(0deg);
+        transform-origin: 100%;
+
+    }
+
+    .cabecalho {   
+
+        width: 100%;
+        background-color: #1976d2;
+        box-shadow: none;
+        position: fixed;
+        transition: background-color .2s linear;
+        height: 55px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+        margin-top: 0px;
+        color:black;
+    }
+
+    footer{
+        background-color:#1976d2;
+        flex-direction: column;
+    }
+
+    footer div.inside-footer div.grid-fluid {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        flex-direction: column;
+
+        margin: 0 0px 40px 0px;
+    }
+
+    .promo-descricao{
+        color: #282828;
+        font-size: 16px;
+
+
+        display: flex;
+        width: 180px;
+
+        margin: 0px 16px;
+        line-height: 30px;
+
+
+        float: left;
+        position: relative;
+
+    }
+
+    
+    .display-pixel{
+    display: block !important;
+    }
+    
+    .display-desktop{
+        display: none !important;
+    }
+    
+
+    .logo{
+        display: flex;
+        width: 46px;
+        margin: 5px;
+
+        float: left;
+        position: relative;
+    }
+    
+    input[type=text] {
+    float: right;
+    width: 140px;
+    padding: 6px;
+    border: none;
+    margin-top: 15px;
+    margin-right: 16px;
+    font-size: 14px;
+    
+    }
+}
+
+/*----------------------GALAXY FOLD--------------------*/
+@media (max-width: 280px){
+    
+    body{
+    margin: 0px -104px -13px -13px;
+    font-family: Roboto;
+    }
+    
+    .icon{
+    display: flex;
+    width: 41px;
+    margin: 7px  7px;
+    padding-right: 28px;
+
+    float: right;
+    position: relative;
+}
+    
+    .icon-night{
+    display: none;
+    width: 41px;
+    margin: 7px 29px 7px 7px;
+
+    float: right;
+    position: relative;
+    
+    }
+    
+    .button.botao-central {
+
+    padding: 12px 25px 12px;
+    font-size: 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 40px;
+    line-height: 6rem;
+    border-radius: 48px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    box-sizing: border-box;
+    background-color: white;
+    color: #1976d2;
+    cursor: pointer;
+}
+
+    .article-container {
+        flex-direction: column;
+        max-width: 920px;
+        margin: 40px auto 20px auto;
+
+        display: flex;
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+    section#intro .single_logo{
+
+        display: flex;
+
+        min-width: 250px;
+        height: 235px;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        margin-bottom: 8px;
+
+    }
+
+    section#intro {
+        flex-direction: column;
+        color: #fff;
+    }
+
+    section#intro .texto-central {
+
+        font-size: 1.7rem;
+
+        line-height: 2.2rem;
+        font-weight: 500;
+        margin: 20px 0;
+    }
+
+    section#intro {
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 480px;
+        margin: 0 auto -32px;
+        padding: 48px 0 0;
+    }
+
+    .background-centro{
+
+        display: flex;
+        flex-direction: row;
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        position: relative;
+        width: 100%;
+        min-height: 480px;
+        height: 80vh;
+        max-height: 472px;
+        box-sizing: border-box;
+        padding: 48px 48px 32px;
+        overflow: hidden;
+        transform: skewY(0deg);
+        transform-origin: 100%;
+
+    }
+
+    .cabecalho {   
+
+        width: 100%;
+        background-color: #1976d2;
+        box-shadow: none;
+        position: fixed;
+        transition: background-color .2s linear;
+        height: 55px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+        margin-top: 0px;
+        color:black;
+    }
+
+    footer{
+        background-color:#1976d2;
+        flex-direction: column;
+    }
+
+    footer div.inside-footer div.grid-fluid {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        flex-direction: column;
+
+        margin: 0 0px 40px 0px;
+    }
+
+    .promo-descricao{
+        color: #282828;
+        font-size: 16px;
+
+
+        display: flex;
+        width: 180px;
+
+        margin: 0px 16px;
+        line-height: 30px;
+
+
+        float: left;
+        position: relative;
+
+    }
+
+    
+    .display-pixel{
+    display: block !important;
+    }
+    
+    .display-desktop{
+        display: none !important;
+    }
+    
+
+    .logo{
+        display: flex;
+        width: 46px;
+        margin: 5px;
+
+        float: left;
+        position: relative;
+    }
+    
+    input[type=text] {
+    float: right;
+    width: 140px;
+    padding: 6px;
+    border: none;
+    margin-top: 15px;
+    margin-right: 16px;
+    font-size: 14px;
+    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
