@@ -752,7 +752,7 @@ div.content {
 }
 
 /*----------------------PIXEL 2-------------------*/
-@media (max-width: 657px) and (min-width: 361px)
+@media (max-width: 657px) and (min-width: 376px)
 {   
     
     .login-mode, .register-mode {
