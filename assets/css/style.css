@@ -547,6 +547,112 @@ div.content {
     overflow: auto;
 }
 
+/*-------------------Login/Register mode-------------------------------*/
+
+.login-mode, .register-mode {
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    top: 25%;
+    left: 50%;
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 60%)
+}
+
+#login-mode-active {   
+    opacity: 1;
+    z-index: 7;
+}
+
+#register-mode-active {   
+    opacity: 1;
+    z-index: 7;
+}
+
+.mode-header {
+    height: 25px;
+}
+
+.close-button-main {
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-style: normal;
+    float: right;
+}
+
+.login-box-form, .register-box-form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;     
+}
+
+.login-box-form form, .register-box-form form { 
+    margin-top: 50px;    
+}
+
+.login-mode form, .register-mode form{
+    position: relative;
+    display: block;   
+    height: 380px;
+}
+
+.login-mode form input, .register-mode form input {
+    width: 330px;
+    height: 50px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.input[type="text"] {
+    padding: 1px 2px;
+}
+
+
+.login-button, .register-button {
+    width: 200px;
+}
+
+.login-button, .register-button {
+    color: black;
+    background-color: white;
+    text-transform: uppercase;
+    border-radius: 500px;
+    padding: 14px 32px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.header-write {
+    font-size: bold;
+}
+
+#register-back-button-style{
+    cursor: pointer;
+    color: blue;
+}
+
+#dark-mode-active {
+    visibility: hidden;
+}
+
+.dark-mode-main {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(50,50,50,.55);
+    position: fixed;
+    z-index: 6;
+    visibility: hidden;
+    filter: drop-shadow(1px 4px 6px black);
+}
+
 /*-------------------DropDown-------------------------------*/
 
 .dropbtn {
@@ -648,6 +754,19 @@ div.content {
 /*----------------------PIXEL 2-------------------*/
 @media (max-width: 657px) and (min-width: 361px)
 {   
+    
+    .login-mode, .register-mode {
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 390px;
+    height: 500px;
+    top: 15%;
+    left: 50%;
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 60%)
+    }   
     
     .icon-night{
     display: flex;
@@ -822,6 +941,29 @@ div.content {
 /*----------------------IPHONE 6/7/8--------------------*/
 @media (max-width: 375px) and (min-width: 361px) {
 
+    .login-mode, .register-mode {
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 390px;
+    height: 500px;
+    top: 15%;
+    left: 54%;
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 60%)
+    }   
+    
+    .dark-mode-main {
+    width: 115vw;
+    height: 110vh;
+    background-color: rgba(50,50,50,.55);
+    position: fixed;
+    z-index: 6;
+    visibility: hidden;
+    filter: drop-shadow(1px 4px 6px black);
+}
+    
     body{
     margin: 0px -30px -13px -13px;
     font-family: Roboto;
@@ -998,7 +1140,31 @@ div.content {
 
 /*----------------------MOTO G4--------------------*/
 @media (max-width: 360px) and (min-width: 321px) {
-
+    
+    
+    .login-mode, .register-mode {
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 370px;
+    height: 500px;
+    top: 15%;
+    left: 53%;
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 60%)
+    }   
+    
+    .dark-mode-main {
+    width: 115vw;
+    height: 110vh;
+    background-color: rgba(50,50,50,.55);
+    position: fixed;
+    z-index: 6;
+    visibility: hidden;
+    filter: drop-shadow(1px 4px 6px black);
+    }
+    
     body{
     margin: 0px -25px -13px -13px;
     font-family: Roboto;
@@ -1177,6 +1343,30 @@ div.content {
 
 /*----------------------IPHONE 5--------------------*/
 @media (max-width: 320px) and (min-width: 281px){
+    
+    .login-mode, .register-mode {
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 375px;
+    height: 500px;
+    top: 15%;
+    left: 62%;
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 60%)
+    }   
+    
+    .dark-mode-main {
+    width: 130vw;
+    height: 125vh;
+    background-color: rgba(50,50,50,.55);
+    position: fixed;
+    z-index: 6;
+    visibility: hidden;
+    filter: drop-shadow(1px 4px 6px black);
+    }
+    
     
     body{
     margin: 0px -80px -13px -13px;
@@ -1364,6 +1554,31 @@ div.content {
 
 /*----------------------GALAXY FOLD--------------------*/
 @media (max-width: 280px){
+    
+        .login-mode, .register-mode {
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 375px;
+    height: 500px;
+    top: 15%;
+    left: 69%;
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 60%)
+    }   
+    
+    .dark-mode-main {
+    width: 145vw;
+    height: 140vh;
+    background-color: rgba(50,50,50,.55);
+    position: fixed;
+    z-index: 6;
+    visibility: hidden;
+    filter: drop-shadow(1px 4px 6px black);
+    }
+        
+    
     
     body{
     margin: 0px -104px -13px -13px;

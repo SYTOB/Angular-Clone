@@ -8,20 +8,113 @@ and open the template in the editor.
     <head>
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" href="assets/imagens/Single_logo.png"/>
-        <script src="assets/js/script.js" type="text/javascript"></script>
+
         <title>Angular</title>
+        <script>
+                function load() {
+                    if(localStorage.getItem('token')){
+                        console.log("Logado!");
+                    }
+                  console.log("Evento de carregamento detectado!");
+                }
+                window.onload = load;
+                
+        </script>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
     <body>
+
+        <div id="login-mode-active" style="visibility: hidden" class="login-mode">
+            <div class="mode-header">
+                <i onclick="loginScreen()" class="close-button-main">X</i>
+            </div>
+            <div>
+                <div class="login-box-form">
+                    <form class="main-form" method="post" onsubmit="Login(event)">
+                        <div class="header-write">Login</div>
+                        <hr>
+                        <br>
+                        <div>
+                            
+                            <label>Email</label>
+
+                            <input type="email" id="inp_email" name="inp_email" placeholder="name@hotmail.com"
+                                   pattern=".{3,}"   required>
+
+                        </div>
+                        <div>
+
+                            <label>Senha</label>
+                            <input type="password" id="inp_password" name="inp_password" placeholder="Senha"
+                                   pattern=".{3,}"   required title="Minímo de 3 caracteres.">   
+                        </div>
+
+                        <div class="login-button-box">
+                            <input type="submit" value="Login"/>    
+                        </div>  
+                        
+                        <br>
+                        
+                        <div id="register-back-button-style" onclick="registerScreen()">Cadastrar-se</div>
+                        
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+        <div id="register-mode-active" style="visibility: hidden" class="register-mode">
+            <div class="mode-header">
+                <i onclick="registerScreen()" class="close-button-main">X</i>
+            </div>
+            <div>
+                <div class="register-box-form">
+                    <form class="main-form" method="post">
+                        <div>Cadastro</div>
+                        <hr>
+                        <br>
+                        <div>
+
+                            <label>Email</label>
+                            <input id="register-username" placeholder="Email" type="email"
+                                   pattern=".{3,}" >
+
+                        </div>
+                        <div>
+
+                            <label>Senha</label>
+                            <input id="register-password" placeholder="Senha" type="password"
+                                   pattern=".{3,}" required title="Minímo de 3 caracteres.">
+                        </div>
+
+                        <div class="login-button-box">
+                            <input type="submit" value="Cadastrar"/>    
+                        </div>  
+                        
+                        <br>
+                        
+                        <div id="register-back-button-style" onclick="registerScreen()"> Voltar para Login</div>
+                        
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+        <div id="dark-mode-active" class="dark-mode-main dark-mode-active"></div>
+
+
         <div class="sobrepor container cabecalho">   
-                       
+
             <a>
                 <img onclick="button_hamb()" class="logo display-pixel" src="assets/imagens/hamburguer.png" alt="Drop-down"/>
             </a>
-            
-            
+
+
             <a>
                 <img class="logo display-desktop" src="assets/imagens/Angular_logo.png" alt="Angular_Logo"/>
             </a>
@@ -35,6 +128,7 @@ and open the template in the editor.
                     <li><a>RESOURCES</a></li>
                     <li><a>EVENTS</a></li>
                     <li><a>BLOG</a></li>
+                    <li><a onclick="logout()">SAIR</a></li>
                 </ul>
 
             </nav>
@@ -44,21 +138,21 @@ and open the template in the editor.
             <a>
                 <img class="icon-night vl " src="assets/imagens/github.png" alt="Github"/>
             </a>
-            
+
             <a class="display-desktop">
                 <img class="icon" src="assets/imagens/twitter.png" alt="Twitter"/>              
             </a>
-            
+
             <a>
                 <img class="icon" src="assets/imagens/lua.png" alt="Modo noturno"/>
             </a>
 
-            <input  type="text" placeholder="  Search" style="border-radius: 100px">
+            <input  type="text" id="myInput" onkeypress="return runScript(event)" placeholder="  Search" style="border-radius: 100px">
 
         </div>
-       
+
         <div id="sidebar" class="sidebar">
-            
+
             <div class="dropdown">
                 <button class="dropbtn">About Angular</button>
                 <div class="dropdown-content">
@@ -66,6 +160,7 @@ and open the template in the editor.
                     <a>Resources</a>
                     <a>Events</a>
                     <a>Blog</a>
+                    
                 </div>
             </div>
             <a>Introduction</a>
@@ -77,16 +172,17 @@ and open the template in the editor.
             <a>Tutorials</a>
             <a>Release Information</a>
             <a>Reference</a>
+            <a onclick="logout()">SAIR</a>
             <hr>
             <div class="card-hamb">
                 stable (v12.1.0)
             </div>
-            
-            
+
+
         </div>
-        
+
         <main>
-            
+
             <header>
                 <div class="wrapper">
                     <div>                   
@@ -104,7 +200,7 @@ and open the template in the editor.
                                         <br>
                                         developer's platform
                                     </div>
-                                    <a class="button botao-central">
+                                    <a onclick="loginScreen()" class="button botao-central">
                                         GET STARTED
                                     </a>
                                 </div>
@@ -114,232 +210,233 @@ and open the template in the editor.
                         </div>    
 
                     </div>
-                <div>
+                    <div>
 
 
-            </header>
+                        </header>
 
-            <article>
+                        <article>
 
-                <div class="article-rows">
-                    <div  class="article-container">
+                            <div class="article-rows">
+                                <div  class="article-container">
 
-                            <div>
-                                <img class="promo" src="assets/imagens/promo1.png" alt="Promoção1"/>
-                            </div>
-                            <div class="text-container">
-                                <div class="promo-cabecalho">
+                                    <div>
+                                        <img class="promo" src="assets/imagens/promo1.png" alt="Promoção1"/>
+                                    </div>
+                                    <div class="text-container">
+                                        <div class="promo-cabecalho">
 
-                                    Develop Across All Platforms
+                                            Develop Across All Platforms
 
-                                </div>
+                                        </div>
 
-                                <p class="promo-descricao">
-                                    Learn one way to build applications with Angular and <br>reuse your 
-                                    code and abilities to build apps for any <br>deployment target. For web,
-                                    mobile web, native mobile<br> and native desktop.          
-                                </p>
+                                        <p class="promo-descricao">
+                                            Learn one way to build applications with Angular and <br>reuse your 
+                                            code and abilities to build apps for any <br>deployment target. For web,
+                                            mobile web, native mobile<br> and native desktop.          
+                                        </p>
 
-                            </div>
-
-                    </div>
-
-                    <hr>
-
-                    <div  class="article-container">
-
-                            <div class="text-container">
-                                <div class="promo-cabecalho">
-
-                                    SPEED & PERFORMANCE 
+                                    </div>
 
                                 </div>
 
-                                <p class="promo-descricao">
-                                    Achieve the maximum speed possible on the Web<br>
-                                    Platform today, and take it further, via Web
-                                    Workers<br> and server-side rendering.        
-                                </p>
-                                <p class="promo-descricao">
-                                    <br>
-                                    Angular puts you in control over scalability.
-                                    Meet huge<br> data requirements by building data 
-                                    models on RxJS,<br> Immutable.js or another push-model.    
+                                <hr>
 
-                                </p>
+                                <div  class="article-container">
 
-                            </div>
+                                    <div class="text-container">
+                                        <div class="promo-cabecalho">
 
-                            <div>
-                                <br><br><br>
-                                <img class="promo" src="assets/imagens/promo2.png" alt="Promoção2"/>
-                            </div>
+                                            SPEED & PERFORMANCE 
 
-                    </div>
+                                        </div>
 
-                    <hr>
+                                        <p class="promo-descricao">
+                                            Achieve the maximum speed possible on the Web<br>
+                                            Platform today, and take it further, via Web
+                                            Workers<br> and server-side rendering.        
+                                        </p>
+                                        <p class="promo-descricao">
+                                            <br>
+                                            Angular puts you in control over scalability.
+                                            Meet huge<br> data requirements by building data 
+                                            models on RxJS,<br> Immutable.js or another push-model.    
 
-                    <div  class="article-container">
+                                        </p>
 
-                            <div>
-                                <br><br><br>
-                                <img class="promo" src="assets/imagens/promo3.png" alt="Promoção3"/>
-                            </div>
-                            <div class="text-container">
-                                <div class="promo-cabecalho">
+                                    </div>
 
-                                    INCREDIBLE TOOLING
+                                    <div>
+                                        <br><br><br>
+                                        <img class="promo" src="assets/imagens/promo2.png" alt="Promoção2"/>
+                                    </div>
 
                                 </div>
 
-                                <p class="promo-descricao">
-                                    Build features quickly with simple, declarative<br> templates.
-                                    Extend the template language with your<br> own components 
-                                    and use a wide array of existing<br> components. 
-                                    Get immediate Angular-specific help and <br>feedback 
-                                    with nearly every IDE and editor. All this<br> comes together
-                                    so you can focus on building amazing <br>apps rather 
-                                    than trying to make the code work.         
-                                </p>
+                                <hr>
 
-                            </div>
+                                <div  class="article-container">
 
-                    </div>   
+                                    <div>
+                                        <br><br><br>
+                                        <img class="promo" src="assets/imagens/promo3.png" alt="Promoção3"/>
+                                    </div>
+                                    <div class="text-container">
+                                        <div class="promo-cabecalho">
 
-                    <hr>
+                                            INCREDIBLE TOOLING
 
-                    <div  class="article-container">
+                                        </div>
 
-                            <div class="text-container">
-                                <div class="promo-cabecalho">
+                                        <p class="promo-descricao">
+                                            Build features quickly with simple, declarative<br> templates.
+                                            Extend the template language with your<br> own components 
+                                            and use a wide array of existing<br> components. 
+                                            Get immediate Angular-specific help and <br>feedback 
+                                            with nearly every IDE and editor. All this<br> comes together
+                                            so you can focus on building amazing <br>apps rather 
+                                            than trying to make the code work.         
+                                        </p>
 
-                                    LOVED BY MILLIONS 
+                                    </div>
+
+                                </div>   
+
+                                <hr>
+
+                                <div  class="article-container">
+
+                                    <div class="text-container">
+                                        <div class="promo-cabecalho">
+
+                                            LOVED BY MILLIONS 
+
+                                        </div>
+
+                                        <p class="promo-descricao">
+                                            From prototype through global deployment, 
+                                            Angular <br>delivers the productivity and scalable 
+                                            infrastructure <br>that supports Google's largest applications.      
+                                        </p>
+
+
+                                    </div>
+
+                                    <div>
+                                        <img class="promo" src="assets/imagens/promo4.png" alt="Promoção4"/>
+                                    </div>
 
                                 </div>
 
-                                <p class="promo-descricao">
-                                    From prototype through global deployment, 
-                                    Angular <br>delivers the productivity and scalable 
-                                    infrastructure <br>that supports Google's largest applications.      
-                                </p>
+                                <hr>
+
+                                <div  class="article-container">
+
+                                    <div class="card">
+                                        <img src="assets/imagens/card.png" alt="Get Started with Angular" width="80" height="70"/>
+
+                                        <div class="text-container">
+
+                                            <div class="promo-cabecalho">
+
+                                                TRY IT NOW
+
+                                            </div>
+
+                                            <p class="promo-descricao">
+                                                Explore Angular's capabilities with a 
+                                                ready-made <br>sample app. No setup required.     
+                                            </p>
 
 
-                            </div>
-
-                            <div>
-                                <img class="promo" src="assets/imagens/promo4.png" alt="Promoção4"/>
-                            </div>
-
-                    </div>
-
-                    <hr>
-
-                    <div  class="article-container">
-
-                        <div class="card">
-                            <img src="assets/imagens/card.png" alt="Get Started with Angular" width="80" height="70"/>
-
-                            <div class="text-container">
-
-                                <div class="promo-cabecalho">
-
-                                    TRY IT NOW
+                                        </div>
+                                    </div>
 
                                 </div>
 
-                                <p class="promo-descricao">
-                                    Explore Angular's capabilities with a 
-                                    ready-made <br>sample app. No setup required.     
-                                </p>
+                            </div>
+
+                        </article>
+                        </main>   
+                        <footer>
+                            <div class="inside-footer">
+                                <div class="grid-fluid">
+                                    <div class="footer-block">
+                                        <h3>RESOURCES</h3>
+                                        <nav id="menu-footer">
+                                            <ul>
+                                                <li><a>About</a></li>
+                                                <li><a>Resource Listing</a></li>
+                                                <li><a>Press Kit</a></li>
+                                                <li><a>Blog</a></li>
+                                                <li><a>Usage Analytics</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                    <div class="footer-block">
+                                        <h3>HELP</h3>
+                                        <nav id="menu-footer">
+                                            <ul>
+                                                <li><a>Stack Overflow</a></li>
+                                                <li><a>Join Discord</a></li>
+                                                <li><a>Gitter</a></li>
+                                                <li><a>Report Issues</a></li>
+                                                <li><a>Code of Conduct</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                    <div class="footer-block">
+                                        <h3>COMMUNITY</h3>
+                                        <nav id="menu-footer" >
+                                            <ul>
+                                                <li ><a>Events</a></li>
+                                                <li><a>Meetups</a></li>
+                                                <li><a>Twitter</a></li>
+                                                <li><a>GitHub</a></li>
+                                                <li><a>Contribute</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                    <div class="footer-block">
+                                        <h3>LANGUAGES</h3>
+                                        <nav id="menu-footer">
+                                            <ul>
+                                                <li><a>Español</a></li>
+                                                <li><a>Chinese</a></li>
+                                                <li><a>Traditional chinese</a></li>
+                                                <li><a>Japanese</a></li>
+                                                <li><a>Korean</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p class="grid-fluid-bootom"> Super-powered by Google ©2010-2021.</p>
+
+                                </div>
+
+                                <div>                 
+                                    <p class="grid-fluid-bootom"> 
+                                        Code licensed under an MIT-style License
+                                        . Documentation licensed under CC BY 4.0
+                                    </p>
+                                </div>
+
+                                <div>                 
+                                    <p class="grid-fluid-bootom"> Version 12.1.1-local+sha.f6b828e292.</p>
+                                </div>
 
 
                             </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-        </main>   
-        <footer>
-            <div class="inside-footer">
-                <div class="grid-fluid">
-                    <div class="footer-block">
-                        <h3>RESOURCES</h3>
-                        <nav id="menu-footer">
-                            <ul>
-                                <li><a>About</a></li>
-                                <li><a>Resource Listing</a></li>
-                                <li><a>Press Kit</a></li>
-                                <li><a>Blog</a></li>
-                                <li><a>Usage Analytics</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                    
-                    <div class="footer-block">
-                        <h3>HELP</h3>
-                        <nav id="menu-footer">
-                            <ul>
-                                <li><a>Stack Overflow</a></li>
-                                <li><a>Join Discord</a></li>
-                                <li><a>Gitter</a></li>
-                                <li><a>Report Issues</a></li>
-                                <li><a>Code of Conduct</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                    
-                    <div class="footer-block">
-                        <h3>COMMUNITY</h3>
-                        <nav id="menu-footer" >
-                            <ul>
-                                <li ><a>Events</a></li>
-                                <li><a>Meetups</a></li>
-                                <li><a>Twitter</a></li>
-                                <li><a>GitHub</a></li>
-                                <li><a>Contribute</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                    
-                    <div class="footer-block">
-                        <h3>LANGUAGES</h3>
-                        <nav id="menu-footer">
-                            <ul>
-                                <li><a>Español</a></li>
-                                <li><a>Chinese</a></li>
-                                <li><a>Traditional chinese</a></li>
-                                <li><a>Japanese</a></li>
-                                <li><a>Korean</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                
-                <div>
-                    <p class="grid-fluid-bootom"> Super-powered by Google ©2010-2021.</p>
-                                        
-                </div>
-                
-                <div>                 
-                    <p class="grid-fluid-bootom"> 
-                        Code licensed under an MIT-style License
-                        . Documentation licensed under CC BY 4.0
-                    </p>
-                </div>
-                
-                <div>                 
-                    <p class="grid-fluid-bootom"> Version 12.1.1-local+sha.f6b828e292.</p>
-                </div>
-                
-                
-            </div>
-        </footer>
+                        </footer>
+        <script src="assets/js/script.js" type="text/javascript"></script>    
     </body>
 </html>
