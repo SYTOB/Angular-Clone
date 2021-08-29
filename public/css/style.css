@@ -547,6 +547,10 @@ div.content {
     overflow: auto;
 }
 
+.border{
+    border: black!important;
+}
+
 /*-------------------Login/Register mode-------------------------------*/
 
 .login-mode, .register-mode {
@@ -567,7 +571,22 @@ div.content {
     z-index: 7;
 }
 
+#perfil-mode-active {   
+    opacity: 1;
+    z-index: 7;
+}
+
+#search-mode-active {   
+    opacity: 1;
+    z-index: 7;
+}
+
 #register-mode-active {   
+    opacity: 1;
+    z-index: 7;
+}
+
+#registerImage-mode-active {   
     opacity: 1;
     z-index: 7;
 }
@@ -601,7 +620,15 @@ div.content {
     height: 380px;
 }
 
-.login-mode form input, .register-mode form input {
+.sizeInput{
+    width: 330px;
+    height: 50px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login-mode form input, .register-mode form  {
     width: 330px;
     height: 50px;
     display: block;
@@ -1756,7 +1783,7 @@ div.content {
     float: right;
     width: 140px;
     padding: 6px;
-    border: none;
+    
     margin-top: 15px;
     margin-right: 16px;
     font-size: 14px;
