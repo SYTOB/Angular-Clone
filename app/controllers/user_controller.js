@@ -100,6 +100,10 @@ class UserController {
 
     }
 
+    sair(req, res){
+        req.sessoion.destroy();
+    }
+
     searchImage(req, res) {
 
 

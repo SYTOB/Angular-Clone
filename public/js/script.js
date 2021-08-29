@@ -163,6 +163,24 @@ function Login2(event) {
     
 }
 
+function sair(){
+
+    fetch('/api/sair', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({           
+        })
+      })
+        .then(response => console.log(response))   
+        
+       // .then(contact => localStorage.setItem('token', contact.token))
+       // .then(response => verificaLogin());
+                
+
+}
+
 function registerUser(event) {
 
     event.preventDefault();
@@ -278,8 +296,10 @@ function pegaEmail(){
 
 function logout(){
     localStorage.removeItem('email');
-    localStorage.removeItem('tipo');
+
     document.getElementById('aviso').innerHTML = '';
+
+    sair();
 }
 
 function falha(){

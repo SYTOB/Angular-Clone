@@ -36,6 +36,8 @@ router.post('/login', UserController.login);
 
 router.post('/registerUser', UserController.registerUser)
 
+router.post('/sair', UserController.sair)
+
 router.post('/registerImage', UserController.authAdm, upload.any(), UserController.registerImage)
 
 router.get('/searchImage', UserController.authNormal, UserController.searchImage)
