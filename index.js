@@ -12,7 +12,7 @@ const routes = require('./routes')
 
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 80
 
 
 // Site Estatico HTML
