@@ -102,26 +102,6 @@ function registerImageScreen(){
 }
 //-------------------------------------API------------------------------------------------
 
-function getUsers() {
-    console.log("getUsers!");
-
-    var myInit = {
-        method: 'GET',
-        headers: {'Accept': 'application/vnd.github.v3+json', 'Content-type': 'application/json'}
-
-    };
-    
-    let input = document.getElementById('myInput').value;
-
-    fetch(`https://api.github.com/users/${input}`,myInit)
-            .then(response => response.json())
-            .then(contact => userFound(contact))
-            .catch();
-    
-
-}
-
-
 function search() {
     console.log("search!");
     
@@ -130,7 +110,7 @@ function search() {
     
     aux = document.getElementById('myInput2').value;
     
-    document.getElementById("mudaSrc").src=`http://localhost:3000/api/searchImage?originalname=${aux}`;
+    document.getElementById("mudaSrc").src=`/api/searchImage?originalname=${aux}`;
     
     
 
@@ -201,7 +181,7 @@ function registerUser(event) {
         }
         
     
-    fetch('http://localhost:3000/api/registerUser', {
+    fetch('/api/registerUser', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'
@@ -242,7 +222,7 @@ function registerImage() {
         data.append('image', file.files[0]);
         
     
-    fetch('http://localhost:3000/api/registerImage', {
+    fetch('/api/registerImage', {
         method: 'POST',
         body: data
       })
