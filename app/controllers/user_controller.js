@@ -24,7 +24,7 @@ class UserController {
         const adm = retorno.tipo;
         
 
-
+        console.log("RETORNO: ",retorno)
 
         if (retorno) {
 
@@ -41,7 +41,8 @@ class UserController {
 
 
         } else {
-            res.send(200, { "result": false })
+
+            res.send(401, { "result": false })
         }
 
     }
@@ -85,7 +86,7 @@ class UserController {
         if (retorno) {
             res.send(200, { "result": true })
         } else {
-            res.send(200, { "result": false })
+            res.send(401, { "result": false })
         }
 
     }
@@ -101,7 +102,9 @@ class UserController {
     }
 
     sair(req, res){
-        req.sessoion.destroy();
+        req.session.destroy();
+        console.log(req.session);
+        res.send(200, "Logout efetuado com sucesso" )
     }
 
     searchImage(req, res) {

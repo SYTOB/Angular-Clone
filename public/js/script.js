@@ -148,9 +148,10 @@ function Login2(event) {
         })
       })
         .then(response => response.json())
-        .then(response => localStorage.setItem('email', response.email))
-        .then(response => loginScreen());    
-        
+        .then(response => auxLogin(response))
+        .then(response => console.log("Resultado: ",response))
+
+         
        // .then(contact => localStorage.setItem('token', contact.token))
        // .then(response => verificaLogin());
                 
@@ -163,7 +164,24 @@ function Login2(event) {
     
 }
 
+function auxLogin(aux){
+
+    console.log("aux: ",aux)
+    
+    if(aux.result){
+        localStorage.setItem('email', aux.email);
+        loginScreen();
+        return true;
+    }else{
+        falha();
+        return false;
+    }
+    
+    
+}
+
 function sair(){
+    console.log("CHEGOU")
 
     fetch('/api/sair', {
         method: 'POST',
@@ -173,7 +191,9 @@ function sair(){
         body: JSON.stringify({           
         })
       })
-        .then(response => console.log(response))   
+        .then(response => console.log("CHEGOU"))
+        .then(response => location.reload())
+
         
        // .then(contact => localStorage.setItem('token', contact.token))
        // .then(response => verificaLogin());
@@ -212,13 +232,14 @@ function registerUser(event) {
       })
         .then(response => response.json())
         .then(response => response.result)
-        .then(response => verificaCadastro(response));    
+        .then(response => verificaCadastro(response))  
+        .catch(console.log("opa")) 
         
        // .then(contact => localStorage.setItem('token', contact.token))
        // .then(response => verificaLogin());
                 
     }else{
-        alert("Voce ja está logado!");
+        
         
     }
    

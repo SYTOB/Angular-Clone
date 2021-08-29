@@ -4,6 +4,10 @@ class user {
 
     registerUser(email, senha, tipo) {
 
+        if(email || senha || tipo == ''){
+            return false;
+        }
+
         let rawdata = fs.readFileSync('./data/users.json');
         let student = JSON.parse(rawdata)
 
@@ -26,6 +30,8 @@ class user {
     }
 
     buscarUser(email, senha) {
+
+        console.log("REdsfsd: ")
 
         let rawdata = fs.readFileSync('./data/users.json');
         let student = JSON.parse(rawdata)
