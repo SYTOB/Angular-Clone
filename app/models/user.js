@@ -1,20 +1,19 @@
+const { Console } = require('console');
 const fs = require('fs');
 
 class user {
 
     registerUser(email, senha, tipo) {
 
-        if(email || senha || tipo == ''){
-            return false;
-        }
-
         let rawdata = fs.readFileSync('./data/users.json');
         let student = JSON.parse(rawdata)
 
         const user_correto = student.filter(user => user.email == email);
 
+        console.log("User encontrado: ",user_correto)
 
         if (user_correto.length > 0) {
+            
             return false;
         }
 

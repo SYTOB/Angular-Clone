@@ -82,6 +82,7 @@ class UserController {
 
         const retorno = user.registerUser(email, senha, tipo);
 
+        console.log("retorno: ",retorno)
 
         if (retorno) {
             res.send(200, { "result": true })
